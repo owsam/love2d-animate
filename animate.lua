@@ -65,6 +65,12 @@ function animation:drawFrameCentered(x, y)
 	love.graphics.draw(self.image, self.quad, x, y, self.rotation, self.sx * self.dx, self.sy * self.dy, self.width/2, self.height/2)
 end
 
+function animation:drawFrameFlippedH(x, y)
+	love.graphics.draw(self.image, self.quad, x+self.width, y, self.rotation, -self.sx * self.dx, self.sy * self.dy)
+end
+function animation:drawFrameFlippedV(x, y)
+	love.graphics.draw(self.image, self.quad, x, y+self.height, self.rotation, self.sx * self.dx, -self.sy * self.dy)
+end
 function animation:rotate(radians)
 	self.rotation = self.rotation + radians
 end
